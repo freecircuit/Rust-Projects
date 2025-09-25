@@ -1,0 +1,3 @@
+[submodule "submodules/guessing_game"]
+	path = submodules/guessing_game
+	url = git@github.com:freecircuit/Rust-Projects.git
