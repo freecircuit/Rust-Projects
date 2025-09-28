@@ -35,13 +35,20 @@ fn main() {
             Ok(num) => num,
             Err(_) => continue,
         };
-
-        let index: u32 = day_of - 1;
-
-        let clamped_index: usize = index.clamp(0, 11).try_into().unwrap();
-
-        song(clamped_index, day, gift);
-        break;
+        if day_of == 0 {
+            println!("Zero days of Christmas?!?!");
+            continue;
+        }
+        else if day_of > 12 {
+            println!("There's only twelve days of Christmas!");
+            continue;
+        }
+        else {
+            let index: u32 = day_of - 1;
+            let clamped_index: usize = index.clamp(0, 11).try_into().unwrap();
+            song(clamped_index, day, gift);
+            break;
+        }
     }
 }
 
